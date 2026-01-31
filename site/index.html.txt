@@ -1,9 +1,0 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Benim Sitem</title>
-</head>
-<body>
-
-</body>
-</html>
