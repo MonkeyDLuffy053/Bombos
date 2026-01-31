@@ -8,42 +8,48 @@
     body {
       height: 100vh;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
       background: #0f172a;
-      font-family: Arial, sans-serif;
+      color: white;
+      font-family: Arial;
     }
 
     button {
       padding: 15px 40px;
       font-size: 18px;
-      font-weight: bold;
-      letter-spacing: 2px;
-      color: white;
-      background: linear-gradient(135deg, #6366f1, #22d3ee);
-      border: none;
       border-radius: 30px;
+      border: none;
       cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    }
-
-    button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.4);
     }
 
     #nah {
       display: none;
-      margin-top: 40px;
       font-size: 120px;
+      margin-top: 30px;
     }
   </style>
 </head>
+
 <body>
 
-  <button onclick="alert('çalışıyor')">CLICK</button>
+  <button onclick="goster()">CLICK</button>
 
-  <di
+  <div id="nah">🖕</div>
 
+  <!-- 👇 SCRIPT TAM OLARAK BURAYA -->
+  <script>
+    function goster() {
+      const nah = document.getElementById("nah");
+      if (nah.style.display === "none") {
+        nah.style.display = "block";
+      } else {
+        nah.style.display = "none";
+      }
+    }
+  </script>
+  <!-- 👆 SCRIPT BURADA BİTİYOR -->
+
+</body>
+</html>
