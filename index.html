@@ -2,37 +2,47 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Butonlu Site</title>
+  <title>Click</title>
 
   <style>
     body {
-      text-align: center;
-      margin-top: 50px;
-      font-family: Arial;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: #0f172a;
+      font-family: Arial, sans-serif;
     }
 
-    img {
+    button {
+      padding: 15px 40px;
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      color: white;
+      background: linear-gradient(135deg, #6366f1, #22d3ee);
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+    }
+
+    #nah {
       display: none;
-      margin-top: 20px;
-      width: 300px;
+      margin-top: 40px;
+      font-size: 120px;
     }
   </style>
 </head>
 <body>
 
-  <h1>Butona bas 👇</h1>
+  <button onclick="goster()">CLICK</button>
 
-  <button onclick="resmiGoster()">Resmi Göster</button>
-
-  <br>
-
-  <img id="resim" src="https://picsum.photos/300" alt="resim">
-
-  <script>
-    function resmiGoster() {
-      document.getElementById("resim").style.display = "block";
-    }
-  </script>
-
-</body>
-</html>
+  <di
