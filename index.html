@@ -1,12 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="tr">
 <head>
-  <title>Benim Sitem</title>
+  <meta charset="UTF-8">
+  <title>Butonlu Site</title>
+
+  <style>
+    body {
+      text-align: center;
+      margin-top: 50px;
+      font-family: Arial;
+    }
+
+    img {
+      display: none;
+      margin-top: 20px;
+      width: 300px;
+    }
+  </style>
 </head>
 <body>
 
+  <h1>Butona bas 👇</h1>
+
+  <button onclick="resmiGoster()">Resmi Göster</button>
+
+  <br>
+
+  <img id="resim" src="https://picsum.photos/300" alt="resim">
+
+  <script>
+    function resmiGoster() {
+      document.getElementById("resim").style.display = "block";
+    }
+  </script>
+
 </body>
 </html>
-<h1>MERHABA 🎉</h1>
-
-
