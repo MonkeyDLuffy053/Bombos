@@ -2,32 +2,60 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Click</title>
+  <title>HasırHUB</title>
 
   <style>
     body {
       height: 100vh;
+      margin: 0;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      flex-direction: column;
       background: #0f172a;
+      font-family: Arial, sans-serif;
       color: white;
-      font-family: Arial;
     }
 
     button {
-      padding: 15px 40px;
+      padding: 16px 45px;
       font-size: 18px;
-      border-radius: 30px;
+      font-weight: bold;
+      letter-spacing: 2px;
       border: none;
+      border-radius: 30px;
       cursor: pointer;
+      background: linear-gradient(135deg, #5865F2, #22d3ee);
+      color: white;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
     }
 
-    #nah {
+    button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+    }
+
+    #discord {
       display: none;
-      font-size: 120px;
-      margin-top: 30px;
+      margin-top: 35px;
+      font-size: 22px;
+      text-align: center;
+    }
+
+    #discord a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 12px 25px;
+      background: #5865F2;
+      color: white;
+      text-decoration: none;
+      border-radius: 20px;
+      font-weight: bold;
+    }
+
+    #discord a:hover {
+      background: #4752c4;
     }
   </style>
 </head>
@@ -36,22 +64,23 @@
 
   <button onclick="goster()">CLICK</button>
 
-  <div id="nah">🖕</div>
+  <div id="discord">
+    <div>Discord sunucuma gel 🍖HasırHUB🍗</div>
+    <a href="https://discord.gg/qpav92Yg" target="_blank">
+      Discord’a Katıl
+    </a>
+  </div>
 
-  <!-- 👇 SCRIPT TAM OLARAK BURAYA -->
   <script>
-    alert("script çalıştı");
     function goster() {
-      const nah = document.getElementById("nah");
-      if (nah.style.display === "none") {
-        nah.style.display = "block";
+      const d = document.getElementById("discord");
+      if (d.style.display === "none") {
+        d.style.display = "block";
       } else {
-        nah.style.display = "none";
+        d.style.display = "none";
       }
     }
   </script>
-  <!-- 👆 SCRIPT BURADA BİTİYOR -->
 
 </body>
 </html>
-
