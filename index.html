@@ -5,16 +5,33 @@
   <title>HasırHUB</title>
 
   <style>
-    body {
-      height: 100vh;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background: #0f172a;
-      font-family: Arial, sans-serif;
-      color: white;
+    <style>
+  body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* 🔥 ARKA PLAN + HAFİF BLUR */
+  body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("https://i.ytimg.com/vi/ba3Il22YQh4/maxresdefault.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: blur(2px); /* 👈 BURAYI DEĞİŞTİREBİLİRSİN */
+    transform: scale(1.05); /* kenar boşlukları gizler */
+    z-index: -1;
+  }
+</style>
+
     }
 
     @keyframes pulse {
@@ -65,3 +82,4 @@
 
 </body>
 </html>
+
