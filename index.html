@@ -15,10 +15,8 @@
       background: #0f172a;
       font-family: Arial, sans-serif;
       color: white;
-      overflow: hidden;
     }
 
-    /* 🔥 PULSE ANİMASYONU */
     @keyframes pulse {
       0% { transform: scale(1); }
       50% { transform: scale(1.08); }
@@ -35,62 +33,35 @@
       cursor: pointer;
       background: linear-gradient(135deg, #5865F2, #22d3ee);
       color: white;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
       animation: pulse 1.5s infinite;
-      transition: box-shadow 0.3s;
     }
 
-    button:hover {
-      box-shadow: 0 15px 35px rgba(0,0,0,0.6);
-    }
-
-    /* 🌊 FADE + SLIDE */
     #discord {
-      opacity: 0;
-      transform: translateY(20px);
-      pointer-events: none;
-      transition: opacity 0.5s ease, transform 0.5s ease;
-      margin-top: 35px;
+      display: none;
+      margin-top: 30px;
       text-align: center;
       font-size: 22px;
-    }
-
-    #discord.show {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-    }
-
-    #discord a {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 12px 25px;
-      background: #5865F2;
-      color: white;
-      text-decoration: none;
-      border-radius: 20px;
-      font-weight: bold;
-      transition: background 0.2s;
-    }
-
-    #discord a:hover {
-      background: #4752c4;
     }
   </style>
 </head>
 
 <body>
 
-  <button onclick="alert('CLICK ÇALIŞTI')">CLICK</button>
-
+  <button id="btn">CLICK</button>
 
   <div id="discord">
-    <div>Discord sunucuma gel 🍖HasırHUB🍗</div>
-    <a href="https://discord.gg/qpav92Yg" target="_blank">
+    Discord sunucuma gel 🍖HasırHUB🍗<br><br>
+    <a href="https://discord.gg/qpav92Yg" target="_blank" style="color:#5865F2;">
       Discord’a Katıl
     </a>
   </div>
 
   <script>
-    function g
+    document.getElementById("btn").addEventListener("click", function () {
+      const d = document.getElementById("discord");
+      d.style.display = d.style.display === "none" ? "block" : "none";
+    });
+  </script>
 
+</body>
+</html>
