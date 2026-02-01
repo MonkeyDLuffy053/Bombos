@@ -18,10 +18,10 @@
       font-family: 'Poppins', sans-serif;
       overflow: hidden;
       color: white;
-      background: #1a1a1a;
+      background: black;
     }
 
-    /* 🎥 ARKA PLAN VIDEO (MASAÜSTÜ) */
+    /* 🎥 ARKA PLAN VIDEO (HER YERDE) */
     .bg-video {
       position: fixed;
       top: 0;
@@ -41,13 +41,15 @@
       z-index: -1;
     }
 
-    /* ÜST YAZI */
+    /* ÜST NOT */
     .note {
       position: fixed;
       top: 20px;
       font-size: 14px;
       opacity: 0.7;
       letter-spacing: 1px;
+      text-align: center;
+      width: 100%;
     }
 
     /* CLICK BUTONU */
@@ -103,30 +105,17 @@
         transform: translateY(0);
       }
     }
-
-    /* 📱 MOBİLDE VIDEOYU KAPAT */
-    @media (max-width: 768px) {
-      .bg-video {
-        display: none;
-      }
-
-      body {
-        background: #1a1a1a;
-      }
-    }
   </style>
 </head>
 
 <body>
 
-  <!-- FAN MADE YAZI -->
   <div class="note">
     Fan-made personal project. No copyright infringement intended.
   </div>
 
   <!-- 🎥 VIDEO -->
   <video class="bg-video" autoplay muted loop playsinline>
-    <!-- 👉 BURAYA VIDEO DOSYA ADIN -->
     <source src="Intro-mp4.mp4" type="video/mp4">
   </video>
 
