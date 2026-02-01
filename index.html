@@ -21,7 +21,7 @@
       background: black;
     }
 
-    /* 🎥 ARKA PLAN VIDEO (HER YERDE) */
+    /* 🎥 ARKA PLAN VIDEO (MASAÜSTÜ) */
     .bg-video {
       position: fixed;
       top: 0;
@@ -50,6 +50,7 @@
       letter-spacing: 1px;
       text-align: center;
       width: 100%;
+      z-index: 5;
     }
 
     /* CLICK BUTONU */
@@ -69,6 +70,7 @@
       cursor: pointer;
       transition: all 0.3s ease;
       animation: pulse 1.6s infinite;
+      z-index: 2;
     }
 
     #clickBtn:hover {
@@ -93,6 +95,7 @@
       backdrop-filter: blur(10px);
       text-align: center;
       animation: fadeSlide 0.4s ease;
+      z-index: 2;
     }
 
     @keyframes fadeSlide {
@@ -105,6 +108,27 @@
         transform: translateY(0);
       }
     }
+
+    /* 📱 MOBİLDE VIDEOYU KAPAT, GRİ ARKA PLAN */
+    @media (max-width: 768px) {
+      .bg-video {
+        display: none;
+      }
+
+      .overlay {
+        display: none;
+      }
+
+      body {
+        background: #2b2b2b;
+      }
+
+      #clickBtn {
+        padding: 16px 60px;
+        font-size: 18px;
+        letter-spacing: 4px;
+      }
+    }
   </style>
 </head>
 
@@ -114,9 +138,9 @@
     Fan-made personal project. No copyright infringement intended.
   </div>
 
-  <!-- 🎥 VIDEO -->
+  <!-- 🎥 VIDEO (SADECE MASAÜSTÜ) -->
   <video class="bg-video" autoplay muted loop playsinline>
-    <source src="Intro-mp4.mp4" type="video/mp4">
+    <source src="İntro-mp4.mp4" type="video/mp4">
   </video>
 
   <div class="overlay"></div>
