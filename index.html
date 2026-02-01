@@ -44,7 +44,7 @@
     #clickBtn {
       padding: 20px 80px;
       font-size: 22px;
-      letter-spacing: 4px;
+      letter-spacing: 6px; /* yazıyı daha geniş yapar */
       text-transform: uppercase;
       font-weight: 600;
 
@@ -80,7 +80,6 @@
       background: rgba(255,255,255,0.18);
       backdrop-filter: blur(10px);
       text-align: center;
-
       animation: fadeSlide 0.4s ease;
     }
 
@@ -99,9 +98,13 @@
 
 <body>
 
-  <!-- 🎥 VIDEO -->
+  <!-- 🎥 ARKA PLAN VIDEO -->
   <video class="bg-video" autoplay muted loop>
-    <source src="video.mp4" type="video/mp4">
+    
+    <!-- 🔴🔴🔴 VIDEO URL'Yİ TAM OLARAK BURAYA YAZACAKSIN 🔴🔴🔴 -->
+    <!-- ÖRNEK: src="video.mp4"  VEYA  src="https://site.com/video.mp4" -->
+    <source src="BURAYA_VIDEO_URL_YAZ" type="video/mp4">
+
   </video>
 
   <div class="overlay"></div>
@@ -131,6 +134,3 @@
 
 </body>
 </html>
-
-
-
