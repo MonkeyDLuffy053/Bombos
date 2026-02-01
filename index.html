@@ -4,49 +4,55 @@
   <meta charset="UTF-8">
   <title>HasırHUB</title>
 
-  <style>
-    body {
-      height: 100vh;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background: #0f172a;
-      font-family: Arial, sans-serif;
-      color: white;
-    }
+    <style>
+  body {
+    background: #111;
+    color: white;
+    font-family: Arial;
+    text-align: center;
+    padding-top: 100px;
+  }
 
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.08); }
-      100% { transform: scale(1); }
-    }
+  button {
+    padding: 15px 40px;
+    font-size: 20px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    color: white;
+    animation: pulse 1.5s infinite;
+  }
 
-    button {
-      padding: 16px 45px;
-      font-size: 18px;
-      font-weight: bold;
-      letter-spacing: 2px;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      background: linear-gradient(135deg, #5865F2, #22d3ee);
-      color: white;
-      animation: pulse 1.5s infinite;
-    }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255,75,43,0.7); }
+    70% { box-shadow: 0 0 0 20px rgba(255,75,43,0); }
+    100% { box-shadow: 0 0 0 0 rgba(255,75,43,0); }
+  }
 
-    #discord {
-      display: none;
-      margin-top: 30px;
-      text-align: center;
-      font-size: 22px;
-    }
-  </style>
+  .card {
+    display: none;
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.15);
+  }
+</style>
+
 </head>
 
 <body>
+<button id="clickBtn">CLICK</button>
 
+<div class="card" id="discord">
+  Discord sunucuma gel 🍖HasırHUB🍗
+  <br><br>
+  <a href="https://discord.gg/LINKIN" target="_blank" style="color:white;">
+    Discord'a git
+  </a>
+</div>
+<body>
+  
   <button id="btn">CLICK</button>
 
   <div id="discord">
@@ -65,3 +71,4 @@
 
 </body>
 </html>
+
