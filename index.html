@@ -58,13 +58,17 @@
   const card = document.getElementById("discord");
 
   btn.addEventListener("click", function () {
-    card.style.display = "block";
-    btn.style.animation = "none";
+    if (card.style.display === "block") {
+      card.style.display = "none";
+    } else {
+      card.style.display = "block";
+    }
   });
 </script>
 
 </body>
   
 </html>
+
 
 
