@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>HasırHUB</title>
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
 
   <style>
@@ -21,11 +20,10 @@
       background: black;
     }
 
-    /* 🎥 ARKA PLAN VIDEO (MASAÜSTÜ) */
+    /* 🎥 VIDEO (MASAÜSTÜ) */
     .bg-video {
       position: fixed;
-      top: 0;
-      left: 0;
+      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -33,7 +31,6 @@
       z-index: -2;
     }
 
-    /* video üstü karartma */
     .overlay {
       position: fixed;
       inset: 0;
@@ -41,7 +38,6 @@
       z-index: -1;
     }
 
-    /* ÜST NOT */
     .note {
       position: fixed;
       top: 20px;
@@ -53,20 +49,16 @@
       z-index: 5;
     }
 
-    /* CLICK BUTONU */
     #clickBtn {
       padding: 20px 90px;
       font-size: 22px;
       letter-spacing: 6px;
       text-transform: uppercase;
       font-weight: 600;
-
       color: white;
       background: rgba(255,255,255,0.08);
-
       border: 3px solid rgba(255,255,255,0.6);
       border-radius: 50px;
-
       cursor: pointer;
       transition: all 0.3s ease;
       animation: pulse 1.6s infinite;
@@ -75,7 +67,6 @@
 
     #clickBtn:hover {
       transform: scale(1.08);
-      border-color: white;
       box-shadow: 0 0 25px rgba(255,255,255,0.4);
     }
 
@@ -85,7 +76,6 @@
       100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
     }
 
-    /* DISCORD KARTI */
     .card {
       display: none;
       margin-top: 35px;
@@ -99,26 +89,12 @@
     }
 
     @keyframes fadeSlide {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    /* 📱 MOBİLDE VIDEOYU KAPAT, GRİ ARKA PLAN */
+    /* 📱 MOBİL GÖRÜNÜM */
     @media (max-width: 768px) {
-      .bg-video {
-        display: none;
-      }
-
-      .overlay {
-        display: none;
-      }
-
       body {
         background: #2b2b2b;
       }
@@ -138,30 +114,39 @@
     Fan-made personal project. No copyright infringement intended.
   </div>
 
-  <!-- 🎥 VIDEO (SADECE MASAÜSTÜ) -->
-  <video class="bg-video" autoplay muted loop playsinline>
-    <source src="İntro-mp4.mp4" type="video/mp4">
+  <!-- 🎥 VIDEO -->
+  <video id="bgVideo" class="bg-video" autoplay muted loop playsinline>
+    <source src="Intro-mp4.mp4" type="video/mp4">
   </video>
 
-  <div class="overlay"></div>
+  <div class="overlay" id="overlay"></div>
 
   <button id="clickBtn">CLICK</button>
 
   <div class="card" id="discord">
-    Discord sunucuma gel 🍖HasırHUB🍗
-    <br><br>
+    Discord sunucuma gel 🍖HasırHUB🍗<br><br>
     <a href="https://discord.gg/qpav92Yg" target="_blank" style="color:white; text-decoration:none;">
       Discord'a git
     </a>
   </div>
 
   <script>
+    // CLICK
     const btn = document.getElementById("clickBtn");
     const card = document.getElementById("discord");
 
     btn.addEventListener("click", () => {
       card.style.display = card.style.display === "block" ? "none" : "block";
     });
+
+    // 📱 MOBİLDE VIDEOYU TAMAMEN SİL
+    if (window.innerWidth <= 768) {
+      const video = document.getElementById("bgVideo");
+      const overlay = document.getElementById("overlay");
+
+      if (video) video.remove();
+      if (overlay) overlay.remove();
+    }
   </script>
 
 </body>
