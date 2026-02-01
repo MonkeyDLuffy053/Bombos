@@ -42,33 +42,29 @@
 </head>
 
 <body>
+
 <button id="clickBtn">CLICK</button>
 
 <div class="card" id="discord">
   Discord sunucuma gel 🍖HasırHUB🍗
   <br><br>
-  <a href="https://discord.gg/LINKIN" target="_blank" style="color:white;">
+  <a href="https://discord.gg/qpav92Yg" target="_blank" style="color:white;">
     Discord'a git
   </a>
 </div>
-<body>
-  
-  <button id="btn">CLICK</button>
 
-  <div id="discord">
-    Discord sunucuma gel 🍖HasırHUB🍗<br><br>
-    <a href="https://discord.gg/qpav92Yg" target="_blank" style="color:#5865F2;">
-      Discord’a Katıl
-    </a>
-  </div>
+<script>
+  const btn = document.getElementById("clickBtn");
+  const card = document.getElementById("discord");
 
-  <script>
-    document.getElementById("btn").addEventListener("click", function () {
-      const d = document.getElementById("discord");
-      d.style.display = d.style.display === "none" ? "block" : "none";
-    });
-  </script>
+  btn.addEventListener("click", function () {
+    card.style.display = "block";
+    btn.style.animation = "none";
+  });
+</script>
 
 </body>
+  
 </html>
+
 
