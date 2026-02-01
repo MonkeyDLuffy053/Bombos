@@ -5,7 +5,7 @@
   <title>HasırHUB</title>
 
   <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
 
   <style>
     body {
@@ -18,23 +18,10 @@
       font-family: 'Poppins', sans-serif;
       overflow: hidden;
       color: white;
-      background: #111; /* mobil için sade gri */
+      background: #1a1a1a;
     }
 
-    /* ÜST UYARI */
-    .disclaimer {
-      position: fixed;
-      top: 18px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 13px;
-      letter-spacing: 1px;
-      opacity: 0.7;
-      z-index: 5;
-      text-align: center;
-    }
-
-    /* 🎥 ARKA PLAN VIDEO (SADECE MASAÜSTÜ) */
+    /* 🎥 ARKA PLAN VIDEO (MASAÜSTÜ) */
     .bg-video {
       position: fixed;
       top: 0;
@@ -44,30 +31,28 @@
       object-fit: cover;
       filter: blur(2px);
       z-index: -2;
-      display: none; /* default kapalı */
     }
 
+    /* video üstü karartma */
     .overlay {
       position: fixed;
       inset: 0;
       background: rgba(0,0,0,0.55);
       z-index: -1;
-      display: none;
     }
 
-    /* 💻 MASAÜSTÜNDE VIDEO AÇ */
-    @media (min-width: 769px) {
-      .bg-video {
-        display: block;
-      }
-      .overlay {
-        display: block;
-      }
+    /* ÜST YAZI */
+    .note {
+      position: fixed;
+      top: 20px;
+      font-size: 14px;
+      opacity: 0.7;
+      letter-spacing: 1px;
     }
 
     /* CLICK BUTONU */
     #clickBtn {
-      padding: 20px 80px;
+      padding: 20px 90px;
       font-size: 22px;
       letter-spacing: 6px;
       text-transform: uppercase;
@@ -75,6 +60,7 @@
 
       color: white;
       background: rgba(255,255,255,0.08);
+
       border: 3px solid rgba(255,255,255,0.6);
       border-radius: 50px;
 
@@ -106,16 +92,6 @@
       text-align: center;
       animation: fadeSlide 0.4s ease;
     }
-    /* 📱 MOBİLDE VIDEOYU KAPAT */
-@media (max-width: 768px) {
-  .bg-video {
-    display: none;
-  }
-
-  body {
-    background: #1a1a1a;
-  }
-}
 
     @keyframes fadeSlide {
       from {
@@ -127,18 +103,30 @@
         transform: translateY(0);
       }
     }
+
+    /* 📱 MOBİLDE VIDEOYU KAPAT */
+    @media (max-width: 768px) {
+      .bg-video {
+        display: none;
+      }
+
+      body {
+        background: #1a1a1a;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- FAN MADE UYARI -->
-  <div class="disclaimer">
+  <!-- FAN MADE YAZI -->
+  <div class="note">
     Fan-made personal project. No copyright infringement intended.
   </div>
 
-  <!-- 🎥 MASAÜSTÜ VIDEO -->
-  <video class="bg-video" autoplay muted loop>
+  <!-- 🎥 VIDEO -->
+  <video class="bg-video" autoplay muted loop playsinline>
+    <!-- 👉 BURAYA VIDEO DOSYA ADIN -->
     <source src="Intro-mp4.mp4" type="video/mp4">
   </video>
 
@@ -165,4 +153,3 @@
 
 </body>
 </html>
-
