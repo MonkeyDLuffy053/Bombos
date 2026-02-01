@@ -18,9 +18,10 @@
       font-family: 'Poppins', sans-serif;
       overflow: hidden;
       color: white;
+      background: #111; /* mobil için sade gri */
     }
 
-    /* ÜST UYARI YAZISI */
+    /* ÜST UYARI */
     .disclaimer {
       position: fixed;
       top: 18px;
@@ -29,12 +30,11 @@
       font-size: 13px;
       letter-spacing: 1px;
       opacity: 0.7;
-      user-select: none;
-      text-align: center;
       z-index: 5;
+      text-align: center;
     }
 
-    /* 🎥 ARKA PLAN VIDEO */
+    /* 🎥 ARKA PLAN VIDEO (SADECE MASAÜSTÜ) */
     .bg-video {
       position: fixed;
       top: 0;
@@ -44,14 +44,25 @@
       object-fit: cover;
       filter: blur(2px);
       z-index: -2;
+      display: none; /* default kapalı */
     }
 
-    /* video üstüne hafif karartma */
     .overlay {
       position: fixed;
       inset: 0;
       background: rgba(0,0,0,0.55);
       z-index: -1;
+      display: none;
+    }
+
+    /* 💻 MASAÜSTÜNDE VIDEO AÇ */
+    @media (min-width: 769px) {
+      .bg-video {
+        display: block;
+      }
+      .overlay {
+        display: block;
+      }
     }
 
     /* CLICK BUTONU */
@@ -111,15 +122,14 @@
 
 <body>
 
-  <!-- ⚠️ FAN MADE UYARI -->
+  <!-- FAN MADE UYARI -->
   <div class="disclaimer">
     Fan-made personal project. No copyright infringement intended.
   </div>
 
-  <!-- 🎥 ARKA PLAN VIDEO -->
+  <!-- 🎥 MASAÜSTÜ VIDEO -->
   <video class="bg-video" autoplay muted loop>
-    <!-- 🔴 BURAYA VIDEO DOSYA ADINI YA DA URL'Yİ YAZ -->
-    <source src="İntro-mp4.mp4" type="video/mp4">
+    <source src="Intro-mp4.mp4" type="video/mp4">
   </video>
 
   <div class="overlay"></div>
@@ -145,4 +155,3 @@
 
 </body>
 </html>
-
