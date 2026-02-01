@@ -5,7 +5,7 @@
   <title>HasırHUB</title>
 
   <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
     body {
@@ -18,6 +18,20 @@
       font-family: 'Poppins', sans-serif;
       overflow: hidden;
       color: white;
+    }
+
+    /* ÜST UYARI YAZISI */
+    .disclaimer {
+      position: fixed;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 13px;
+      letter-spacing: 1px;
+      opacity: 0.7;
+      user-select: none;
+      text-align: center;
+      z-index: 5;
     }
 
     /* 🎥 ARKA PLAN VIDEO */
@@ -44,13 +58,12 @@
     #clickBtn {
       padding: 20px 80px;
       font-size: 22px;
-      letter-spacing: 6px; /* yazıyı daha geniş yapar */
+      letter-spacing: 6px;
       text-transform: uppercase;
       font-weight: 600;
 
       color: white;
       background: rgba(255,255,255,0.08);
-
       border: 3px solid rgba(255,255,255,0.6);
       border-radius: 50px;
 
@@ -98,13 +111,15 @@
 
 <body>
 
+  <!-- ⚠️ FAN MADE UYARI -->
+  <div class="disclaimer">
+    Fan-made personal project. No copyright infringement intended.
+  </div>
+
   <!-- 🎥 ARKA PLAN VIDEO -->
   <video class="bg-video" autoplay muted loop>
-    
-    <!-- 🔴🔴🔴 VIDEO URL'Yİ TAM OLARAK BURAYA YAZACAKSIN 🔴🔴🔴 -->
-    <!-- ÖRNEK: src="video.mp4"  VEYA  src="https://site.com/video.mp4" -->
+    <!-- 🔴 BURAYA VIDEO DOSYA ADINI YA DA URL'Yİ YAZ -->
     <source src="BURAYA_VIDEO_URL_YAZ" type="video/mp4">
-
   </video>
 
   <div class="overlay"></div>
@@ -124,11 +139,7 @@
     const card = document.getElementById("discord");
 
     btn.addEventListener("click", () => {
-      if (card.style.display === "block") {
-        card.style.display = "none";
-      } else {
-        card.style.display = "block";
-      }
+      card.style.display = card.style.display === "block" ? "none" : "block";
     });
   </script>
 
